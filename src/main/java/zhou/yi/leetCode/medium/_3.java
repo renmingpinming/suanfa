@@ -1,9 +1,7 @@
-package zhou.yi.leetCode;
+package zhou.yi.leetCode.medium;
 
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 /**
  * @Author: XiaoLang

@@ -1,4 +1,4 @@
-package zhou.yi.leetCode;
+package zhou.yi.leetCode.easy;
 
 import java.util.HashMap;
 import java.util.Map;

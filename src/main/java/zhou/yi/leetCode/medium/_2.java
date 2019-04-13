@@ -1,4 +1,4 @@
-package zhou.yi.leetCode;
+package zhou.yi.leetCode.medium;
 
 import java.math.BigInteger;
 
