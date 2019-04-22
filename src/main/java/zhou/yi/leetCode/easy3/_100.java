@@ -58,7 +58,7 @@ public class _100 {
         System.out.println(test.isSameTree(t1.get(0),t2.get(0)));
     }
 
-    public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
