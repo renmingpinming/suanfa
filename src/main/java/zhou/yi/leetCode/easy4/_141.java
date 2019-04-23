@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy4;
 
+import zhou.yi.leetCode.model.ListNode;
+
 /**
  * @Author: XiaoLang
  * @Date: 2019/4/22 17:37
@@ -39,23 +41,9 @@ public class _141 {
 
     public static void main(String[] args) {
         _141 test = new _141();
-        ListNode l1 = new ListNode(3);
-//        ListNode a = new ListNode(2);
-//        ListNode b = new ListNode(0);
-//        ListNode c = new ListNode(-4);
-//        l1.next = a;
-//        a.next = b;
-//        b.next = c;
-//        c.next = a;
-        test.hasCycle(l1);
+        int[] numsA = new int[]{3};
+        ListNode headA = ListNode.createListNode(numsA);
+        System.out.println(test.hasCycle(headA));;
     }
 
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 }

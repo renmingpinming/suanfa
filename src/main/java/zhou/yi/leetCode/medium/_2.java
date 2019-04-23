@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.medium;
 
+import zhou.yi.leetCode.model.ListNode;
+
 import java.math.BigInteger;
 
 /**
@@ -47,12 +49,9 @@ public class _2 {
         if(list.next == null){
             numStr.append(list.val);
         }
-        while (list.next != null){
+        while (list != null){
             numStr.insert(0,list.val);
             list = list.next;
-            if(list.next == null){
-                numStr.insert(0,list.val);
-            }
         }
         if(numStr.toString().length()!=0){
             return new BigInteger(numStr.toString());
@@ -62,32 +61,14 @@ public class _2 {
 
     public static void main(String[] args){
         _2 test = new _2();
-        ListNode l1 = new ListNode(2);
-        ListNode a = new ListNode(4);
-        ListNode b = new ListNode(3);
-        ListNode l2 = new ListNode(5);
-        ListNode c = new ListNode(6);
-        ListNode d = new ListNode(4);
-        l1.next = a;
-        a.next = b;
-        l2.next = c;
-        c.next = d;
-//        ListNode l1 = new ListNode(0);
-//        ListNode l2 = new ListNode(1);
-        ListNode rst = test.addTwoNumbers(l1,l2);
-        while (rst.next != null){
+        int[] numsA = new int[]{2,4,3};
+        int[] numsB = new int[]{5,6,4};
+        ListNode headA = ListNode.createListNode(numsA);
+        ListNode headB = ListNode.createListNode(numsB);
+        ListNode rst = test.addTwoNumbers(headA,headB);
+        while (rst != null){
             System.out.print(rst.val+"->");
             rst = rst.next;
-            if(rst.next == null){
-                System.out.print(rst.val);
-            }
         }
     }
-}
-
-
-class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
 }

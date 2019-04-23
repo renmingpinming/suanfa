@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy;
 
+import zhou.yi.leetCode.model.ListNode;
+
 /**
  * @Author: XiaoLang
  * @Date: 2019/4/16 13:41
@@ -35,27 +37,14 @@ public class _21 {
 
     public static void main(String[] args) {
         _21 test = new _21();
-        ListNode l1 = new ListNode(1);
-        ListNode a = new ListNode(2);
-        ListNode b = new ListNode(4);
-        ListNode l2 = new ListNode(1);
-        ListNode c = new ListNode(3);
-        ListNode d = new ListNode(4);
-        l1.next = a;
-        a.next = b;
-        l2.next = c;
-        c.next = d;
-        ListNode l3 = test.mergeTwoLists(l1,l2);
+        int[] numsA = new int[]{1,2,4};
+        int[] numsB = new int[]{1,3,4};
+        zhou.yi.leetCode.model.ListNode headA = zhou.yi.leetCode.model.ListNode.createListNode(numsA);
+        zhou.yi.leetCode.model.ListNode headB = zhou.yi.leetCode.model.ListNode.createListNode(numsB);
+        ListNode l3 = test.mergeTwoLists(headA,headB);
         while (l3!=null){
             System.out.println(l3.val);
             l3 = l3.next;
         }
     }
 }
-
-
-  class ListNode {
-      int val;
-      ListNode next;
-      ListNode(int x) { val = x; }
-  }
