@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 import java.util.List;
 
 /**
@@ -23,14 +25,14 @@ import java.util.List;
  *    3    3
  */
 public class _101 {
-    public boolean isSymmetric(_100.TreeNode root) {
+    public boolean isSymmetric(TreeNode root) {
         if(root == null){
             return Boolean.TRUE;
         }
         return helper(root.left,root.right);
     }
 
-    public boolean helper(_100.TreeNode left,_100.TreeNode right){
+    public boolean helper(TreeNode left,TreeNode right){
         if(left == null && right == null){
             return Boolean.TRUE;
         }
@@ -43,7 +45,7 @@ public class _101 {
     public static void main(String[] args) {
         _100 test = new _100();
         int[] arr = new int[]{1,2,2,3,4,4,3};
-        List<_100.TreeNode> t1 = test.createBinaryTree(arr);
+        List<TreeNode> t1 = TreeNode.createBinaryTree(arr);
         _101 test2 = new _101();
         System.out.println(test2.isSymmetric(t1.get(0)));
     }

@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 /**
  * @Author: XiaoLang
  * @Date: 2019/4/22 10:57
@@ -21,7 +23,7 @@ package zhou.yi.leetCode.easy3;
  * 返回它的最小深度  2.
  */
 public class _111 {
-    public int minDepth(_100.TreeNode root) {
+    public int minDepth(TreeNode root) {
         if(root == null){
             return 0;
         }
@@ -32,8 +34,8 @@ public class _111 {
     }
 
     public static void main(String[] args) {
-        _100.TreeNode root = new _100.TreeNode(1);
-        root.left = new _100.TreeNode(2);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
         _111 test = new _111();
         System.out.println(test.minDepth(root));
     }

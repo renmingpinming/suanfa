@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 import java.util.List;
 
 /**
@@ -22,7 +24,7 @@ import java.util.List;
  * 返回它的最大深度 3 。
  */
 public class _104 {
-    public int maxDepth(_100.TreeNode root) {
+    public int maxDepth(TreeNode root) {
         if(root == null){
             return 0;
         }
@@ -32,7 +34,7 @@ public class _104 {
     public static void main(String[] args) {
         _100 test = new _100();
         int[] arr = new int[]{1,2,2,3,4,4,3,5};
-        List<_100.TreeNode> t1 = test.createBinaryTree(arr);
+        List<TreeNode> t1 = TreeNode.createBinaryTree(arr);
         _104 test2 = new _104();
         System.out.println(test2.maxDepth(t1.get(0)));
     }

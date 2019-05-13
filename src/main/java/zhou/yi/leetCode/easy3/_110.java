@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 /**
  * @Author: XiaoLang
  * @Date: 2019/4/22 10:13
@@ -34,13 +36,13 @@ package zhou.yi.leetCode.easy3;
  * 返回 false 。
  */
 public class _110 {
-    public boolean isBalanced(_100.TreeNode root) {
+    public boolean isBalanced(TreeNode root) {
         if(root==null) return true;
         int l=depth(root.left);
         int r=depth(root.right);
         return ((int)Math.abs(l-r)<2)&&isBalanced(root.left) && isBalanced(root.right);
     }
-    static int depth(_100.TreeNode n){
+    static int depth(TreeNode n){
         if(n==null) return 0;
         return Math.max(depth(n.left),depth(n.right))+1;
     }

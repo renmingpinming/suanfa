@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -53,57 +55,57 @@ public class _100 {
         _100 test = new _100();
         int[] arr1 = new int[]{1,2,1};
         int[] arr2 = new int[]{1,0,3};
-        List<TreeNode> t1 = test.createBinaryTree(arr1);
-        List<TreeNode> t2 = test.createBinaryTree(arr2);
+        List<TreeNode> t1 = TreeNode.createBinaryTree(arr1);
+        List<TreeNode> t2 = TreeNode.createBinaryTree(arr2);
         System.out.println(test.isSameTree(t1.get(0),t2.get(0)));
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-
-        public int getVal() {
-            return val;
-        }
-
-        public void setVal(int val) {
-            this.val = val;
-        }
-
-        public TreeNode getLeft() {
-            return left;
-        }
-
-        public void setLeft(TreeNode left) {
-            this.left = left;
-        }
-
-        public TreeNode getRight() {
-            return right;
-        }
-
-        public void setRight(TreeNode right) {
-            this.right = right;
-        }
-    }
-
-    //创建二叉树
-    public List<TreeNode> createBinaryTree(int[] arrays){
-        List<TreeNode> nodeList = new LinkedList<TreeNode>();
-        for(int i = 0; i < arrays.length; i++){
-            nodeList.add(new TreeNode(arrays[i]));
-        }
-        for (int i = 0; i < nodeList.size()/2-1;i++){
-            nodeList.get(i).setLeft(nodeList.get(i * 2 + 1));
-            nodeList.get(i).setRight(nodeList.get(i * 2 + 2));
-        }
-        int index = nodeList.size()/2-1;
-        nodeList.get(index).setLeft(nodeList.get(index * 2 + 1));
-        if(nodeList.size() % 2 == 1){
-            nodeList.get(index).setRight(nodeList.get(index * 2 + 2));
-        }
-        return nodeList;
-    }
+//    public static class TreeNode {
+//        int val;
+//        TreeNode left;
+//        TreeNode right;
+//        TreeNode(int x) { val = x; }
+//
+//        public int getVal() {
+//            return val;
+//        }
+//
+//        public void setVal(int val) {
+//            this.val = val;
+//        }
+//
+//        public TreeNode getLeft() {
+//            return left;
+//        }
+//
+//        public void setLeft(TreeNode left) {
+//            this.left = left;
+//        }
+//
+//        public TreeNode getRight() {
+//            return right;
+//        }
+//
+//        public void setRight(TreeNode right) {
+//            this.right = right;
+//        }
+//    }
+//
+//    //创建二叉树
+//    public List<TreeNode> createBinaryTree(int[] arrays){
+//        List<TreeNode> nodeList = new LinkedList<TreeNode>();
+//        for(int i = 0; i < arrays.length; i++){
+//            nodeList.add(new TreeNode(arrays[i]));
+//        }
+//        for (int i = 0; i < nodeList.size()/2-1;i++){
+//            nodeList.get(i).setLeft(nodeList.get(i * 2 + 1));
+//            nodeList.get(i).setRight(nodeList.get(i * 2 + 2));
+//        }
+//        int index = nodeList.size()/2-1;
+//        nodeList.get(index).setLeft(nodeList.get(index * 2 + 1));
+//        if(nodeList.size() % 2 == 1){
+//            nodeList.get(index).setRight(nodeList.get(index * 2 + 2));
+//        }
+//        return nodeList;
+//    }
 }

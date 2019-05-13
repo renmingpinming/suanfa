@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 /**
  * @Author: XiaoLang
  * @Date: 2019/4/22 9:19
@@ -20,19 +22,19 @@ package zhou.yi.leetCode.easy3;
  *  -10  5
  */
 public class _108 {
-    public _100.TreeNode sortedArrayToBST(int[] nums) {
+    public TreeNode sortedArrayToBST(int[] nums) {
         if(nums == null || nums.length == 0){
             return null;
         }
         return helper(nums,0,nums.length - 1);
     }
 
-    public _100.TreeNode helper(int[] nums,int left,int right){
+    public TreeNode helper(int[] nums,int left,int right){
         if(left > right){
             return null;
         }
         int mid = (left + right) >>> 1;
-        _100.TreeNode node = new _100.TreeNode(nums[mid]);
+        TreeNode node = new TreeNode(nums[mid]);
         node.left = helper(nums,left,mid - 1);
         node.right = helper(nums,mid + 1,right);
         return node;
@@ -41,7 +43,7 @@ public class _108 {
     public static void main(String[] args) {
         int[] arr = new int[]{-10,-3,0,5,9};
         _108 test2 = new _108();
-        _100.TreeNode node = test2.sortedArrayToBST(arr);
+        TreeNode node = test2.sortedArrayToBST(arr);
 //        while (node!=null){
             System.out.println(node.val);
 //        }

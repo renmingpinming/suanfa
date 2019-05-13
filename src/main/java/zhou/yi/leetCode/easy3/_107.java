@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,19 +27,19 @@ import java.util.List;
  * ]
  */
 public class _107 {
-    public List<List<Integer>> levelOrderBottom(_100.TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> rst = new LinkedList<>();
         if(root == null){
             return rst;
         }
-        LinkedList<_100.TreeNode> queue = new LinkedList<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
         queue.add(root);
         List<Integer> subList;
         while (!queue.isEmpty()){
             int size = queue.size();
             subList = new LinkedList<>();
             for(int i = 0;i < size;i++){
-                _100.TreeNode node = queue.poll();
+                TreeNode node = queue.poll();
                 subList.add(node.val);
                 if(node.left != null){
                     queue.add(node.left);

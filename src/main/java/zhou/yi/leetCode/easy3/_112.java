@@ -1,5 +1,7 @@
 package zhou.yi.leetCode.easy3;
 
+import zhou.yi.leetCode.model.TreeNode;
+
 /**
  * @Author: XiaoLang
  * @Date: 2019/4/22 11:27
@@ -20,7 +22,7 @@ package zhou.yi.leetCode.easy3;
  * 返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5->4->11->2。
  */
 public class _112 {
-    public boolean hasPathSum(_100.TreeNode root, int sum) {
+    public boolean hasPathSum(TreeNode root, int sum) {
         if (root == null) return false;
         if (root.left == null && root.right == null) return sum == root.val;
         return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val);
