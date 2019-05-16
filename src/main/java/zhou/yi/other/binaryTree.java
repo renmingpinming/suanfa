@@ -10,15 +10,17 @@ public class binaryTree {
 //        int[] nums = {1,2,3,4,5,6,7,8,9};
         int[] nums = {6,10,15,23,27,33,42};
         List<Node> tree = b.createBinaryTree(nums);
-        b.prOrder(tree.get(0));
-        System.out.println();
-        b.inOrder(tree.get(0));
-        System.out.println();
-        b.postOrder(tree.get(0));
-        System.out.println();
+//        b.prOrder(tree.get(0));
+//        System.out.println();
+//        b.inOrder(tree.get(0));
+//        System.out.println();
+//        b.postOrder(tree.get(0));
+//        System.out.println();
         b.dfs(tree.get(0));
         System.out.println();
-        b.bfs(tree.get(0));
+        b.dfs2(tree.get(0));
+//        System.out.println();
+//        b.bfs(tree.get(0));
     }
 
     //创建二叉树
@@ -84,6 +86,15 @@ public class binaryTree {
             if(popNode.getRightNode() != null){
                 nodeStacks.push(popNode.getRightNode());
             }
+        }
+    }
+
+    public void dfs2(Node root) {
+        if (root != null) {
+            //preOrder
+            System.out.println(root.getValue());
+            dfs(root.getLeftNode());
+            dfs(root.getRightNode());
         }
     }
     //广度优先
