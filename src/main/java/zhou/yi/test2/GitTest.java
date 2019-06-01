@@ -5,4 +5,7 @@ package zhou.yi.test2;
  * @Date: 2019/6/1 9:27
  */
 public class GitTest {
+    public static void main(String[] args) {
+
+    }
 }
