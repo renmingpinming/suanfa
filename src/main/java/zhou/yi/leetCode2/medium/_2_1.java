@@ -1,4 +1,4 @@
-package zhou.yi.leetCode.medium;
+package zhou.yi.leetCode2.medium;
 
 import zhou.yi.leetCode.model.ListNode;
 

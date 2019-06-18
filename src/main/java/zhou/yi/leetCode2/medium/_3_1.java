@@ -1,4 +1,4 @@
-package zhou.yi.leetCode.medium;
+package zhou.yi.leetCode2.medium;
 
 import java.util.HashMap;
 import java.util.HashSet;
