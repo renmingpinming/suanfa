@@ -1,5 +1,8 @@
 package zhou.yi.test2;
 
+import org.springframework.util.CollectionUtils;
+
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -13,5 +16,9 @@ public class ReplaceEnter {
 //        System.out.println(s.replace(" ",""));
         String[] x = s.replace("\n","").replace(" ","").split(",");
         System.out.println(x);
+        Long shopId = 4L;
+        if(shopId.equals(4L)){
+            System.out.println("11111111111");
+        }
     }
 }
