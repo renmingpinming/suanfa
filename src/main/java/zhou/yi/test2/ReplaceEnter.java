@@ -20,5 +20,7 @@ public class ReplaceEnter {
         if(shopId.equals(4L)){
             System.out.println("11111111111");
         }
+        Long xxx = 497695873725636460L;
+        System.out.println(xxx.toString());
     }
 }
