@@ -14,5 +14,8 @@ public class Regex {
         String s1 = "//img.alicdn.com/imgextra/i2/1761495540/O1CN01Al7MzR1qnMk9BzMV7_!!0-item_pic.jpg_430x430q90.jpg";
         Matcher matcher = pattern.matcher(s1);
         System.out.println(matcher.matches());
+        Pattern pattern2 = Pattern.compile("^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$");
+        Matcher matcher2 = pattern2.matcher("13826875930");
+        System.out.println(matcher2.matches());
     }
 }
