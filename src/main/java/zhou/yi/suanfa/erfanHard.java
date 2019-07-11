@@ -49,7 +49,7 @@ public class erfanHard {
             }else if(nums[mid] < value){
                 low = mid + 1;
             }else {
-                if((mid == 0) || nums[mid + 1] != value){
+                if((mid == nums.length - 1) || nums[mid + 1] != value){
                     return mid;
                 }else {
                     low = mid + 1;
