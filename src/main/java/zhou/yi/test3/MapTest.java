@@ -13,5 +13,7 @@ public class MapTest {
         map.put("a","b");
         map.put("c","d");
         System.out.println(map.get("d"));
+
+        System.out.println(map.getOrDefault("d","hello"));
     }
 }
