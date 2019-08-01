@@ -1,6 +1,8 @@
 package zhou.yi.test3;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -15,5 +17,12 @@ public class MapTest {
         System.out.println(map.get("d"));
 
         System.out.println(map.getOrDefault("d","hello"));
+
+        Map<String,Object> map1 = new HashMap<>();
+        List<String> names = new ArrayList<>();
+        names.add("ab");
+        names.add("cd");
+        map1.put("test",names);
+        System.out.println(map1);
     }
 }
