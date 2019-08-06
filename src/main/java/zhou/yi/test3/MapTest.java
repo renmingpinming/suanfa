@@ -24,5 +24,9 @@ public class MapTest {
         names.add("cd");
         map1.put("test",names);
         System.out.println(map1);
+
+        map1.put("xx",null);
+        map1.put("yy",null);
+        System.out.println();
     }
 }
