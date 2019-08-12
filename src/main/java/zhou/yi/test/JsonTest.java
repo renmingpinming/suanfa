@@ -13,20 +13,20 @@ import java.util.Map;
 public class JsonTest {
     private static ObjectMapper MAPPER = new ObjectMapper();
 
-    public static void main(String[] args)throws Exception{
-        HashMap<String,Object> mmap = MAPPER.readValue(str, HashMap.class);
-        HashMap<String,HashMap<String,Object>> mmap2 = MAPPER.readValue(str, HashMap.class);
+    public static void main(String[] args) throws Exception {
+        HashMap<String, Object> mmap = MAPPER.readValue(str, HashMap.class);
+        HashMap<String, HashMap<String, Object>> mmap2 = MAPPER.readValue(str, HashMap.class);
 //        System.out.println(mmap2.get("buyerCnt"));
 //        System.out.println(mmap2.get("itemModel").get("title"));
-        ArrayList<HashMap<String,HashMap<String,HashMap<String,Object>>>> sList2 = MAPPER.readValue(strs, ArrayList.class);
+        ArrayList<HashMap<String, HashMap<String, HashMap<String, Object>>>> sList2 = MAPPER.readValue(strs, ArrayList.class);
 //        for (HashMap<String,HashMap<String,HashMap<String,Object>>> s: sList2) {
 //            System.out.println(s.get("itemModel").get("title"));
 //            System.out.println(s.get("buyerCnt"));
 //        }
-        HashMap<String,String> item = MAPPER.readValue(str3, HashMap.class);
-        Map<String,String> item2 = MAPPER.readValue(str3, Map.class);
-        for (HashMap<String,HashMap<String,HashMap<String,Object>>> s: sList2) {
-            for (String key: item.keySet()) {
+        HashMap<String, String> item = MAPPER.readValue(str3, HashMap.class);
+        Map<String, String> item2 = MAPPER.readValue(str3, Map.class);
+        for (HashMap<String, HashMap<String, HashMap<String, Object>>> s : sList2) {
+            for (String key : item.keySet()) {
 //                if(item.get(key)==null || "".equals(item.get(key))){
 //                    System.out.println(key);
 //                    System.out.println(s.get(key));
@@ -215,7 +215,7 @@ public class JsonTest {
             "        }\n" +
             "      ]";
 
-    private static String str3 ="{\n" +
+    private static String str3 = "{\n" +
             "  \"itemModel\": \"quantity\",\n" +
             "  \"itemModel\": \"reservePrice\",\n" +
             "  \"itemModel\": \"online\",\n" +

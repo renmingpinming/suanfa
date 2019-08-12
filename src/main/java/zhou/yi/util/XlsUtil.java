@@ -17,13 +17,13 @@ import java.util.List;
  */
 public class XlsUtil {
 
-    public enum DataType{
+    public enum DataType {
         DATE,
         NUMBER,
         STRING
     }
 
-    public static List<List<String>> getDataList(InputStream is,List<DataType> dataTypes,Integer startRow,Integer celSize) throws IOException {
+    public static List<List<String>> getDataList(InputStream is, List<DataType> dataTypes, Integer startRow, Integer celSize) throws IOException {
         HSSFWorkbook hssfWorkbook = new HSSFWorkbook(is);
 
         HSSFSheet hssfSheet = hssfWorkbook.getSheetAt(0);
@@ -31,7 +31,7 @@ public class XlsUtil {
         List<List<String>> rowL = new ArrayList<List<String>>(hssfSheet.getLastRowNum());
         // 循环行
         for (int rowNum = 0; rowNum <= hssfSheet.getLastRowNum(); rowNum++) {
-            if (startRow!=null && rowNum<(startRow)){
+            if (startRow != null && rowNum < (startRow)) {
                 continue;
             }
             HSSFRow hssfRow = hssfSheet.getRow(rowNum);
@@ -40,16 +40,16 @@ public class XlsUtil {
             rowL.add(colL);
             for (int i = 0; i < celSize; i++) {
                 HSSFCell cell = hssfRow.getCell(i);
-                if(cell==null||cell.equals("")||cell.getCellType() ==HSSFCell.CELL_TYPE_BLANK){
+                if (cell == null || cell.equals("") || cell.getCellType() == HSSFCell.CELL_TYPE_BLANK) {
                     colL.add("");
                     continue;
                 }
                 int cellType = cell.getCellType();
 
                 // 指定数据类型
-                if (!CollectionUtils.isEmpty(dataTypes)&&dataTypes.size()>=i){
+                if (!CollectionUtils.isEmpty(dataTypes) && dataTypes.size() >= i) {
                     DataType type = dataTypes.get(i);
-                    switch (type){
+                    switch (type) {
                         case DATE:
                             colL.add(DateUtilSelf.toStringTime(cell.getDateCellValue()));
                             break;
@@ -65,9 +65,9 @@ public class XlsUtil {
                 }
 
                 // 默认数据类型
-                if (cellType == Cell.CELL_TYPE_NUMERIC){
+                if (cellType == Cell.CELL_TYPE_NUMERIC) {
                     colL.add(String.valueOf(cell.getNumericCellValue()));
-                }else {
+                } else {
                     cell.setCellType(Cell.CELL_TYPE_STRING);
                     colL.add(cell.getStringCellValue());
                 }

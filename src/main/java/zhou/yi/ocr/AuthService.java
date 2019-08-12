@@ -13,6 +13,7 @@ import java.util.Map;
  * @Author: XiaoLang
  * @Date: 2019/1/25 14:45
  */
+
 /**
  * 获取token类
  */
@@ -20,6 +21,7 @@ public class AuthService {
 
     /**
      * 获取权限token
+     *
      * @return 返回示例：
      * {
      * "access_token": "24.460da4889caad24cccdb1fea17221975.2592000.1491995545.282335-1234567",
@@ -37,6 +39,7 @@ public class AuthService {
     /**
      * 获取API访问token
      * 该token有一定的有效期，需要自行管理，当失效时需重新获取.
+     *
      * @param ak - 百度云官网获取的 API Key
      * @param sk - 百度云官网获取的 Securet Key
      * @return assess_token 示例：
@@ -85,7 +88,7 @@ public class AuthService {
         return null;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         String accessToken = getAuth();
         System.out.println(accessToken);
     }

@@ -7,19 +7,19 @@ import java.util.Set;
  * @Author: XiaoLang
  * @Date: 2019/5/20 17:09
  * 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
- *
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入: "hello"
  * 输出: "holle"
  * 示例 2:
- *
+ * <p>
  * 输入: "leetcode"
  * 输出: "leotcede"
  */
 public class _345 {
     public String reverseVowels(String s) {
-        if (s == null || s.length() == 0){
+        if (s == null || s.length() == 0) {
             return s;
         }
         Set<Character> charSet = new HashSet<>();
@@ -36,11 +36,11 @@ public class _345 {
         char[] chars = s.toCharArray();
         int i = 0;
         int j = s.length() - 1;
-        while (i < j){
-            while (!charSet.contains(chars[i]) && i < j){
+        while (i < j) {
+            while (!charSet.contains(chars[i]) && i < j) {
                 i++;
             }
-            while (!charSet.contains(chars[j]) && i < j){
+            while (!charSet.contains(chars[j]) && i < j) {
                 j--;
             }
             char temp = chars[i];
@@ -53,7 +53,7 @@ public class _345 {
     }
 
     public static void main(String[] args) {
-        _345 test=new _345();
+        _345 test = new _345();
         System.out.println(test.reverseVowels("leetcode"));
     }
 }

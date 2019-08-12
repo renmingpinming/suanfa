@@ -18,13 +18,13 @@ public class IdWorker {
         if (workerId > maxWorkerId || workerId < 0) {
 
             throw new IllegalArgumentException(
-                    String.format("worker Id can't be greater than %d or less than 0",maxWorkerId));
+                    String.format("worker Id can't be greater than %d or less than 0", maxWorkerId));
         }
 
         if (datacenterId > maxDatacenterId || datacenterId < 0) {
 
             throw new IllegalArgumentException(
-                    String.format("datacenter Id can't be greater than %d or less than 0",maxDatacenterId));
+                    String.format("datacenter Id can't be greater than %d or less than 0", maxDatacenterId));
         }
 
         this.workerId = workerId;
@@ -51,7 +51,7 @@ public class IdWorker {
 
     private long lastTimestamp = -1L;
 
-    public long getWorkerId(){
+    public long getWorkerId() {
         return workerId;
     }
 
@@ -115,14 +115,14 @@ public class IdWorker {
         return timestamp;
     }
 
-    private long timeGen(){
+    private long timeGen() {
         return System.currentTimeMillis();
     }
 
     //---------------测试---------------
     public static void main(String[] args) {
 
-        IdWorker worker = new IdWorker(1,1,1);
+        IdWorker worker = new IdWorker(1, 1, 1);
 
         for (int i = 0; i < 30; i++) {
             System.out.println(worker.nextId());

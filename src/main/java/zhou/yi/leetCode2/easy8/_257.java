@@ -8,27 +8,27 @@ import java.util.*;
  * @Author: XiaoLang
  * @Date: 2019/5/15 16:51
  * 给定一个二叉树，返回所有从根节点到叶子节点的路径。
- *
+ * <p>
  * 说明: 叶子节点是指没有子节点的节点。
- *
+ * <p>
  * 示例:
- *
+ * <p>
  * 输入:
- *
- *    1
- *  /   \
+ * <p>
+ * 1
+ * /   \
  * 2     3
- *  \
- *   5
- *
+ * \
+ * 5
+ * <p>
  * 输出: ["1->2->5", "1->3"]
- *
+ * <p>
  * 解释: 所有根节点到叶子节点的路径为: 1->2->5, 1->3
  */
 public class _257 {
     public List<String> binaryTreePaths(TreeNode root) {
         List<String> rst = new ArrayList<>();
-        if(root == null){
+        if (root == null) {
             return rst;
         }
         //栈
@@ -37,7 +37,7 @@ public class _257 {
         Stack<Integer> levels = new Stack<Integer>();
         levels.push(0);
         stack.push(root);
-        while (!stack.isEmpty()){
+        while (!stack.isEmpty()) {
             int lv = levels.pop();
             TreeNode node = stack.pop();
             list.add(node.val);
@@ -52,11 +52,11 @@ public class _257 {
                     list.remove(list.size() - 1);
                 }
             }
-            if(node.left != null){
+            if (node.left != null) {
                 stack.push(node.left);
                 levels.push(lv + 1);
             }
-            if(node.right != null){
+            if (node.right != null) {
                 stack.push(node.right);
                 levels.push(lv + 1);
             }
@@ -66,7 +66,7 @@ public class _257 {
 
     public static void main(String[] args) {
         _257 test = new _257();
-        int[] nums = new int[]{1,2,3,4,5};
+        int[] nums = new int[]{1, 2, 3, 4, 5};
         List<TreeNode> root = TreeNode.createBinaryTree(nums);
         System.out.println(test.binaryTreePaths(root.get(0)));
     }

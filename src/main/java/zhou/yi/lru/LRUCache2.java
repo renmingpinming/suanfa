@@ -10,7 +10,7 @@ import java.util.LinkedList;
 public class LRUCache2<K, V> {
     private final int cacheSize;
     private LinkedList<K> cacheList = new LinkedList<>();
-    private HashMap<K,V> map = new HashMap<>();
+    private HashMap<K, V> map = new HashMap<>();
 
     public LRUCache2(int cacheSize) {
         this.cacheSize = cacheSize;
@@ -52,7 +52,7 @@ public class LRUCache2<K, V> {
     }
 
     public static void main(String[] args) {
-        LRUCache2<String,String> lru = new LRUCache2<>(4);
+        LRUCache2<String, String> lru = new LRUCache2<>(4);
         lru.put("C", null);
         lru.put("A", null);
         lru.put("D", null);

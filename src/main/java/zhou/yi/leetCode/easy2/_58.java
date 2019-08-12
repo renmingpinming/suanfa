@@ -8,10 +8,10 @@ public class _58 {
     public int lengthOfLastWord(String s) {
         String[] strs = s.split(" ");
         int len = strs.length;
-        if(len == 0){
+        if (len == 0) {
             return 0;
         }
-        return strs[len-1].length();
+        return strs[len - 1].length();
     }
 
     public static void main(String[] args) {

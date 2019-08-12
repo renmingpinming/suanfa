@@ -17,6 +17,7 @@ public class PublicVar {
             e.printStackTrace();
         }
     }
+
     //该方法前加上synchronized关键字就同步了
     synchronized public void getValue() {
         System.out.println("getValue method thread name="

@@ -10,25 +10,25 @@ import java.util.List;
  * @Author: XiaoLang
  * @Date: 2019/5/13 18:25
  * 请判断一个链表是否为回文链表。
- *
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入: 1->2
  * 输出: false
  * 示例 2:
- *
+ * <p>
  * 输入: 1->2->2->1
  * 输出: true
  */
 public class _234 {
     public boolean isPalindrome(ListNode head) {
-        if(head == null || head.next == null){
+        if (head == null || head.next == null) {
             return Boolean.TRUE;
         }
         //求中间节点
         ListNode slow = head;
         ListNode fast = head;
-        while (fast != null && fast.next != null && fast.next.next != null){
+        while (fast != null && fast.next != null && fast.next.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -36,7 +36,7 @@ public class _234 {
         ListNode pre = null;
         ListNode now = slow.next;
         ListNode temp = null;
-        while (now != null){
+        while (now != null) {
             temp = now.next;
             now.next = pre;
             pre = now;
@@ -44,8 +44,8 @@ public class _234 {
         }
         slow.next = pre;
         slow = slow.next;
-        while (slow != null){
-            if(head.val != slow.val){
+        while (slow != null) {
+            if (head.val != slow.val) {
                 return Boolean.FALSE;
             }
             head = head.next;
@@ -56,7 +56,7 @@ public class _234 {
 
     public static void main(String[] args) {
         _234 test = new _234();
-        int[] nums = new int[]{1,2,2,1};
+        int[] nums = new int[]{1, 2, 2, 1};
         ListNode root = ListNode.createListNode(nums);
         System.out.println(test.isPalindrome(root));
     }

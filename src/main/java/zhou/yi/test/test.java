@@ -3,7 +3,7 @@ package zhou.yi.test;
 import java.util.*;
 
 public class test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 //        Map<Integer,String> map1 = new HashMap<Integer, String>();
 //        map1.put(1,"hello");
 //        map1.put(2,"world");
@@ -44,24 +44,24 @@ public class test {
     }
 
 
-    public String distinctTidSet(String tidSet){
+    public String distinctTidSet(String tidSet) {
         String[] tids = tidSet.split(",");
-        if (tids.length ==1){
+        if (tids.length == 1) {
             return tidSet;
         }
         Set<String> tidSetDis = new HashSet<String>();
-        for (String tid: tids) {
+        for (String tid : tids) {
             tidSetDis.add(tid);
         }
         StringBuilder rstS = new StringBuilder();
-        for (String tid: tidSetDis) {
+        for (String tid : tidSetDis) {
             rstS.append(tid).append(",");
         }
         String rst = rstS.toString();
-        return rst.substring(0,rst.length() - 1);
+        return rst.substring(0, rst.length() - 1);
     }
 
-    public void xxx(){
+    public void xxx() {
 
     }
 

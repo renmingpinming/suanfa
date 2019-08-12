@@ -7,7 +7,7 @@ public class Automic {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
         int temvalue = 0;
-        int[] nums = { 1, 2, 3, 4, 5, 6 };
+        int[] nums = {1, 2, 3, 4, 5, 6};
         AtomicIntegerArray i = new AtomicIntegerArray(nums);
         for (int j = 0; j < nums.length; j++) {
             System.out.println(i.get(j));

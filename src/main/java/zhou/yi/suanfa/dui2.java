@@ -1,9 +1,9 @@
 package zhou.yi.suanfa;
 
 public class dui2 {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         dui2 dui2 = new dui2();
-        int[] nums = {7,5,19,8,4,1,20,13,16};
+        int[] nums = {7, 5, 19, 8, 4, 1, 20, 13, 16};
         dui2.heapSort(nums);
     }
 
@@ -48,9 +48,9 @@ public class dui2 {
     }
 
 
-    public  void printNum(int[] nums){
-        for (int num: nums) {
-            System.out.print(num+"-");
+    public void printNum(int[] nums) {
+        for (int num : nums) {
+            System.out.print(num + "-");
         }
         System.out.println();
     }

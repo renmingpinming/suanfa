@@ -8,23 +8,23 @@ import java.util.Stack;
  * @Author: XiaoLang
  * @Date: 2019/7/26 9:46
  * 给定一个无重复元素的数组 candidates 和一个目标数 target ，找出 candidates 中所有可以使数字和为 target 的组合。
- *
+ * <p>
  * candidates 中的数字可以无限制重复被选取。
- *
+ * <p>
  * 说明：
- *
+ * <p>
  * 所有数字（包括 target）都是正整数。
  * 解集不能包含重复的组合。 
  * 示例 1:
- *
+ * <p>
  * 输入: candidates = [2,3,6,7], target = 7,
  * 所求解集为:
  * [
- *   [7],
- *   [2,2,3]
+ * [7],
+ * [2,2,3]
  * ]
  * 示例 2:
- *
+ * <p>
  * 输入: candidates = [2,3,5], target = 8,
  * 所求解集为:
  * [
@@ -37,24 +37,24 @@ public class _39 {
     List<List<Integer>> rst = new ArrayList<>();
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        if(candidates.length == 0){
+        if (candidates.length == 0) {
             return rst;
         }
-        cal(candidates,target,0,new Stack<>());
+        cal(candidates, target, 0, new Stack<>());
         return rst;
     }
 
-    public void cal(int[] candidates,int residue, int start, Stack<Integer> pre){
-        if(residue < 0){
+    public void cal(int[] candidates, int residue, int start, Stack<Integer> pre) {
+        if (residue < 0) {
             return;
         }
-        if(residue == 0){
+        if (residue == 0) {
             rst.add(new ArrayList<>(pre));
             return;
         }
-        for (int i = start;i < candidates.length;i++){
+        for (int i = start; i < candidates.length; i++) {
             pre.push(candidates[i]);
-            cal(candidates,residue - candidates[i],i,pre);
+            cal(candidates, residue - candidates[i], i, pre);
             pre.pop();
         }
     }

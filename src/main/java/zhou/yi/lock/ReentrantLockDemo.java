@@ -39,6 +39,7 @@ public class ReentrantLockDemo {
             }
         }
     }
+
     //生产者
     class Producer {
         private Depot depot;

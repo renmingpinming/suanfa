@@ -6,7 +6,7 @@ import zhou.yi.leetCode.model.ListNode;
  * @Author: XiaoLang
  * @Date: 2019/4/23 10:01
  * 编写一个程序，找到两个单链表相交的起始节点。
- *
+ * <p>
  * 如下面的两个链表：
  * 在节点 c1 开始相交。
  * 示例 1：
@@ -30,22 +30,22 @@ import zhou.yi.leetCode.model.ListNode;
  */
 public class _160 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        if(headA == null || headB == null){
+        if (headA == null || headB == null) {
             return null;
         }
         Integer countA = countList(headA);
         Integer countB = countList(headB);
         Integer diff;
-        if(countA > countB){
+        if (countA > countB) {
             diff = countA - countB;
-            headA = subDiff(headA,diff);
+            headA = subDiff(headA, diff);
         }
-        if (countB > countA){
+        if (countB > countA) {
             diff = countB - countA;
-            headB = subDiff(headB,diff);
+            headB = subDiff(headB, diff);
         }
-        while (headA != null || headB != null){
-            if(headA.equals(headB) ){
+        while (headA != null || headB != null) {
+            if (headA.equals(headB)) {
                 return headA;
             }
             headA = headA.next;
@@ -54,17 +54,17 @@ public class _160 {
         return null;
     }
 
-    public Integer countList(ListNode node){
+    public Integer countList(ListNode node) {
         int count = 0;
-        while (node != null){
+        while (node != null) {
             count++;
             node = node.next;
         }
         return count;
     }
 
-    public ListNode subDiff(ListNode node,Integer diff){
-        while (diff > 0){
+    public ListNode subDiff(ListNode node, Integer diff) {
+        while (diff > 0) {
             node = node.next;
             diff--;
         }
@@ -72,13 +72,13 @@ public class _160 {
     }
 
     public static void main(String[] args) {
-        int[] numsA = new int[]{4,1,8,4,5};
-        int[] numsB = new int[]{5,0,1,8,4,5};
+        int[] numsA = new int[]{4, 1, 8, 4, 5};
+        int[] numsB = new int[]{5, 0, 1, 8, 4, 5};
         ListNode headA = ListNode.createListNode(numsA);
         ListNode headB = ListNode.createListNode(numsB);
         _160 test = new _160();
-        ListNode rst = test.getIntersectionNode(headA,headB);
-        while (rst != null){
+        ListNode rst = test.getIntersectionNode(headA, headB);
+        while (rst != null) {
             System.out.println(rst.val);
             rst = rst.next;
         }

@@ -12,19 +12,18 @@ import java.util.TreeSet;
 public class SortedSetTest {
     public static void main(String[] args) {
         SortedSet<String> sortedSet = new TreeSet<>();
-        Collections.addAll(sortedSet,"one two three four five six seven eight".split(" "));
+        Collections.addAll(sortedSet, "one two three four five six seven eight".split(" "));
         System.out.println(sortedSet);
         Iterator<String> it = sortedSet.iterator();
         String low = sortedSet.first();
         String high = sortedSet.last();
-        for(int i = 0;i <= 6;i++){
-            if(i == 3){
+        for (int i = 0; i <= 6; i++) {
+            if (i == 3) {
                 low = it.next();
             }
-            if(i == 6){
+            if (i == 6) {
                 high = it.next();
-            }
-            else {
+            } else {
                 it.next();
             }
         }

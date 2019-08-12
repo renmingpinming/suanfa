@@ -1,11 +1,13 @@
 package zhou.yi.lru;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class LRUCache<K,V> extends LinkedHashMap<K, V> {
+public class LRUCache<K, V> extends LinkedHashMap<K, V> {
     static final float LOAD_FACTOR = 0.75f;
     static final boolean ACCESS_ORDER = true;
     private int cacheSize;
+
     public LRUCache(int initialCapacity, int cacheSize) {
         super(initialCapacity, LOAD_FACTOR, ACCESS_ORDER);
         this.cacheSize = cacheSize;

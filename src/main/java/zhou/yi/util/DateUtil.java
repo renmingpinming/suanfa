@@ -35,19 +35,19 @@ public class DateUtil {
     }
 
     public static String toStringMonth(Date month) {
-        return ((SimpleDateFormat)monthFormatThreadLocal.get()).format(month);
+        return ((SimpleDateFormat) monthFormatThreadLocal.get()).format(month);
     }
 
     public static String toStringDate(Date time) {
-        return ((SimpleDateFormat)dateFormatThreadLocal.get()).format(time);
+        return ((SimpleDateFormat) dateFormatThreadLocal.get()).format(time);
     }
 
     public static String toStringTime(Date time) {
-        return ((SimpleDateFormat)timeFormatThreadLocal.get()).format(time);
+        return ((SimpleDateFormat) timeFormatThreadLocal.get()).format(time);
     }
 
     public static Date toMonth(Date time) {
-        Calendar calendar = (Calendar)calendarThreadLocal.get();
+        Calendar calendar = (Calendar) calendarThreadLocal.get();
         calendar.setTime(time);
         calendar.set(5, 1);
         calendar.set(11, 0);
@@ -58,11 +58,11 @@ public class DateUtil {
     }
 
     public static Date toMonth(String time) throws ParseException {
-        return ((SimpleDateFormat)monthFormatThreadLocal.get()).parse(time);
+        return ((SimpleDateFormat) monthFormatThreadLocal.get()).parse(time);
     }
 
     public static Date toDate(Date time) {
-        Calendar calendar = (Calendar)calendarThreadLocal.get();
+        Calendar calendar = (Calendar) calendarThreadLocal.get();
         calendar.setTime(time);
         calendar.set(11, 0);
         calendar.set(12, 0);
@@ -72,18 +72,18 @@ public class DateUtil {
     }
 
     public static Date toDate(String date) throws ParseException {
-        return ((SimpleDateFormat)dateFormatThreadLocal.get()).parse(date);
+        return ((SimpleDateFormat) dateFormatThreadLocal.get()).parse(date);
     }
 
     public static Date toTime(Date time) {
-        Calendar calendar = (Calendar)calendarThreadLocal.get();
+        Calendar calendar = (Calendar) calendarThreadLocal.get();
         calendar.setTime(time);
         calendar.set(14, 0);
         return calendar.getTime();
     }
 
     public static Date toTime(String time) throws ParseException {
-        return ((SimpleDateFormat)timeFormatThreadLocal.get()).parse(time);
+        return ((SimpleDateFormat) timeFormatThreadLocal.get()).parse(time);
     }
 
     public static Date getNowMonth() {
@@ -99,7 +99,7 @@ public class DateUtil {
     }
 
     public static Date timeAfterDays(Date time, int days) {
-        Calendar calendar = (Calendar)calendarThreadLocal.get();
+        Calendar calendar = (Calendar) calendarThreadLocal.get();
         calendar.setTime(time);
         calendar.add(5, days);
         return calendar.getTime();
@@ -110,7 +110,7 @@ public class DateUtil {
     }
 
     public static Date timeAfterSeconds(Date time, int seconds) {
-        Calendar calendar = (Calendar)calendarThreadLocal.get();
+        Calendar calendar = (Calendar) calendarThreadLocal.get();
         calendar.setTime(time);
         calendar.add(13, seconds);
         return calendar.getTime();
@@ -121,6 +121,6 @@ public class DateUtil {
     }
 
     public static void sleep(int sec) throws InterruptedException {
-        Thread.sleep((long)(sec * 1000));
+        Thread.sleep((long) (sec * 1000));
     }
 }

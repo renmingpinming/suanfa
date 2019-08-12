@@ -10,40 +10,46 @@ import java.util.List;
 public class DateUtilSelf extends DateUtil {
     private static final ThreadLocal<SimpleDateFormat> batchMonthFormatThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override protected SimpleDateFormat initialValue() {
+                @Override
+                protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMM");
                 }
             };
 
     private static final ThreadLocal<SimpleDateFormat> batchDayFormatThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override protected SimpleDateFormat initialValue() {
+                @Override
+                protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMMdd");
                 }
             };
 
     private static final ThreadLocal<SimpleDateFormat> batchMinuteFormatThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override protected SimpleDateFormat initialValue() {
+                @Override
+                protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMMddHHmm");
                 }
             };
 
     private static final ThreadLocal<SimpleDateFormat> batchSecondThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override protected SimpleDateFormat initialValue() {
+                @Override
+                protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMMddHHmmss");
                 }
             };
     private static final ThreadLocal<SimpleDateFormat> batchSecondThreadLocalStyleTwo =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override protected SimpleDateFormat initialValue() {
+                @Override
+                protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 }
             };
     private static final ThreadLocal<SimpleDateFormat> batchSecondThreadLocalStyleThree =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override protected SimpleDateFormat initialValue() {
+                @Override
+                protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 }
             };
@@ -65,6 +71,7 @@ public class DateUtilSelf extends DateUtil {
     public static String toBatchSecondStringDateStyleTwo(Date time) {
         return batchSecondThreadLocalStyleTwo.get().format(time);
     }
+
     public static String toBatchSecondStringDateStyleThree(Date time) {
         return batchSecondThreadLocalStyleThree.get().format(time);
     }
@@ -106,7 +113,7 @@ public class DateUtilSelf extends DateUtil {
         return batchMinuteFormatThreadLocal.get().parse(batchMinute.toString());
     }
 
-    public static Date toDateByBatchSecond(String  batchSecond) throws ParseException {
+    public static Date toDateByBatchSecond(String batchSecond) throws ParseException {
         return batchSecondThreadLocalStyleThree.get().parse(batchSecond);
     }
 
@@ -145,9 +152,9 @@ public class DateUtilSelf extends DateUtil {
     private static final Long oneDayInMills = 1000 * 60 * 60 * 24l;
 
     /**
-     *
      * <p>Title: 自然月区间日期</p>
      * <p>Description: 获取区间所有日期，前后包含</p>
+     *
      * @param startBatchDay
      * @param endBatchDay
      * @return
@@ -181,6 +188,7 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 获取前一天
+     *
      * @param batchDay
      * @return
      */
@@ -190,6 +198,7 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 获取后一天
+     *
      * @param batchDay
      * @return
      */
@@ -248,7 +257,7 @@ public class DateUtilSelf extends DateUtil {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         if (batchMinute != null) {
-            int hour   = batchMinute / 100;
+            int hour = batchMinute / 100;
             int minute = batchMinute % 100;
 
             cal.set(Calendar.HOUR, hour);
@@ -259,6 +268,7 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 时间加
+     *
      * @param date
      * @param minutes
      * @return
@@ -280,6 +290,7 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 时间相差毫秒数
+     *
      * @param pre
      * @param after
      * @return
@@ -310,6 +321,7 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 两个时间相差距离多少天多少小时多少分多少秒
+     *
      * @return String 返回值为：xx天xx小时xx分xx秒
      */
     public static String getDistanceStr(Date one, Date two) {

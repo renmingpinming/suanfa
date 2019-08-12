@@ -49,7 +49,7 @@ public class ObjToMap {
 //    }
 
     public static Map<String, Object> objectToMap2(Object obj) throws Exception {
-        if(obj == null)
+        if (obj == null)
             return null;
 
         Map<String, Object> map = new HashMap<String, Object>();
@@ -62,11 +62,11 @@ public class ObjToMap {
                 continue;
             }
             Method getter = property.getReadMethod();
-            Object value = getter!=null ? getter.invoke(obj) : null;
+            Object value = getter != null ? getter.invoke(obj) : null;
             map.put(key, value);
-            if(value!= null){
+            if (value != null) {
                 System.out.println(value.getClass());
-                if(value.getClass().isAssignableFrom(List.class)){
+                if (value.getClass().isAssignableFrom(List.class)) {
                     System.out.println("为list类型");
                 }
             }

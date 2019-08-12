@@ -22,12 +22,14 @@ public class PoiTest {
     protected final Logger logger = LogManager.getLogger(getClass());
     private static final String EXCEL_XLS = "xls";
     private static final List<XlsUtil.DataType> CELL_TYPE_LIST;
-    static{
+
+    static {
         CELL_TYPE_LIST = new ArrayList<XlsUtil.DataType>();
         CELL_TYPE_LIST.add(XlsUtil.DataType.STRING);
         CELL_TYPE_LIST.add(XlsUtil.DataType.STRING);
         CELL_TYPE_LIST.add(XlsUtil.DataType.STRING);
     }
+
     public static void main(String[] args) throws IOException {
         // 读入 文件
         File file = new File("C:\\Users\\User\\Desktop\\test.xls");
@@ -38,12 +40,12 @@ public class PoiTest {
 
         List<List<String>> dataL = null;
         try {
-            dataL = XlsUtil.getDataList(multi.getInputStream(),CELL_TYPE_LIST,1,3);
+            dataL = XlsUtil.getDataList(multi.getInputStream(), CELL_TYPE_LIST, 1, 3);
         } catch (Exception e) {
             e.printStackTrace();
         }
 
-        for(int i = 0; i < dataL.size();i++){
+        for (int i = 0; i < dataL.size(); i++) {
             System.out.println(dataL.get(i).get(0));
 //            if(StringUtils.isEmpty(dataL.get(i).get(1))){
 //                System.out.println("zhouyi");

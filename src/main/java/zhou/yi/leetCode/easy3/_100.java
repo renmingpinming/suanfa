@@ -9,55 +9,55 @@ import java.util.List;
  * @Author: XiaoLang
  * @Date: 2019/4/19 9:44
  * 给定两个二叉树，编写一个函数来检验它们是否相同。
- *
+ * <p>
  * 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
- *
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入:       1         1
- *           / \       / \
- *          2   3     2   3
- *
- *         [1,2,3],   [1,2,3]
- *
+ * / \       / \
+ * 2   3     2   3
+ * <p>
+ * [1,2,3],   [1,2,3]
+ * <p>
  * 输出: true
  * 示例 2:
- *
+ * <p>
  * 输入:      1          1
- *           /           \
- *          2             2
- *
- *         [1,2],     [1,null,2]
- *
+ * /           \
+ * 2             2
+ * <p>
+ * [1,2],     [1,null,2]
+ * <p>
  * 输出: false
  * 示例 3:
- *
+ * <p>
  * 输入:       1         1
- *           / \       / \
- *          2   1     1   2
- *
- *         [1,2,1],   [1,1,2]
- *
+ * / \       / \
+ * 2   1     1   2
+ * <p>
+ * [1,2,1],   [1,1,2]
+ * <p>
  * 输出: false
  */
 public class _100 {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        if(p == null && q == null){
+        if (p == null && q == null) {
             return Boolean.TRUE;
         }
-        if(p == null || q == null || p.val != q.val){
+        if (p == null || q == null || p.val != q.val) {
             return Boolean.FALSE;
         }
-        return isSameTree(p.left,q.left) && isSameTree(p.right,q.right);
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 
     public static void main(String[] args) {
         _100 test = new _100();
-        int[] arr1 = new int[]{1,2,1};
-        int[] arr2 = new int[]{1,0,3};
+        int[] arr1 = new int[]{1, 2, 1};
+        int[] arr2 = new int[]{1, 0, 3};
         List<TreeNode> t1 = TreeNode.createBinaryTree(arr1);
         List<TreeNode> t2 = TreeNode.createBinaryTree(arr2);
-        System.out.println(test.isSameTree(t1.get(0),t2.get(0)));
+        System.out.println(test.isSameTree(t1.get(0), t2.get(0)));
     }
 
 //    public static class TreeNode {

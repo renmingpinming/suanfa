@@ -4,9 +4,9 @@ package zhou.yi.leetCode.easy5;
  * @Author: XiaoLang
  * @Date: 2019/4/23 16:12
  * 给定一个数组，将数组中的元素向右移动 k 个位置，其中 k 是非负数。
- *
+ * <p>
  * 示例 1:
- *
+ * <p>
  * 输入: [1,2,3,4,5,6,7] 和 k = 3
  * 输出: [5,6,7,1,2,3,4]
  * 解释:
@@ -14,7 +14,7 @@ package zhou.yi.leetCode.easy5;
  * 向右旋转 2 步: [6,7,1,2,3,4,5]
  * 向右旋转 3 步: [5,6,7,1,2,3,4]
  * 示例 2:
- *
+ * <p>
  * 输入: [-1,-100,3,99] 和 k = 2
  * 输出: [3,99,-1,-100]
  * 解释:
@@ -37,8 +37,8 @@ public class _189 {
 
     public static void main(String[] args) {
         _189 test = new _189();
-        int[] nums = new int[]{1,2,3,4,5,6,7};
-        test.rotate(nums,3);
+        int[] nums = new int[]{1, 2, 3, 4, 5, 6, 7};
+        test.rotate(nums, 3);
         System.out.println(nums);
     }
 }

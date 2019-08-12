@@ -9,18 +9,19 @@ import java.util.Objects;
 public class ListNode {
     public int val;
     public ListNode next;
+
     public ListNode(int x) {
         val = x;
         next = null;
     }
 
-    public static ListNode createListNode(int[] nums){
-        if (nums == null || nums.length == 0){
+    public static ListNode createListNode(int[] nums) {
+        if (nums == null || nums.length == 0) {
             return null;
         }
         ListNode head = new ListNode(0);
         ListNode node = head;
-        for (int num:nums) {
+        for (int num : nums) {
             node.next = new ListNode(num);
             node = node.next;
         }

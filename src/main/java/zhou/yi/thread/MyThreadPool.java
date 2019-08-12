@@ -15,6 +15,7 @@ public class MyThreadPool {
     private BlockingQueue<Runnable> workQueue;
     private Set<Worker> workers;
     private volatile boolean RUNNING = true;
+
     public MyThreadPool(int corePoolSize) {
         this.corePoolSize = corePoolSize;
         workQueue = new LinkedBlockingQueue<>();

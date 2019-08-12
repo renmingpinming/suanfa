@@ -4,33 +4,33 @@ package zhou.yi.leetCode2.easy9;
  * @Author: XiaoLang
  * @Date: 2019/5/20 16:58
  * 编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。
- *
+ * <p>
  * 不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。
- *
+ * <p>
  * 你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。
- *
- *
- *
+ * <p>
+ * <p>
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入：["h","e","l","l","o"]
  * 输出：["o","l","l","e","h"]
  * 示例 2：
- *
+ * <p>
  * 输入：["H","a","n","n","a","h"]
  * 输出：["h","a","n","n","a","H"]
  */
 public class _344 {
     public void reverseString(char[] s) {
-        if(s == null || s.length == 0){
+        if (s == null || s.length == 0) {
             return;
         }
         int i = 0;
         int j = s.length - 1;
-        while (i < j){
+        while (i < j) {
             char temp = s[i];
             s[i] = s[j];
-            s[j]  = temp;
+            s[j] = temp;
             i++;
             j--;
         }
@@ -38,7 +38,7 @@ public class _344 {
 
     public static void main(String[] args) {
         _344 test = new _344();
-        char[] s = new char[]{'a','B','c','d','E','f','G','h','i','j','T'};
+        char[] s = new char[]{'a', 'B', 'c', 'd', 'E', 'f', 'G', 'h', 'i', 'j', 'T'};
         test.reverseString(s);
         System.out.println(s);
     }

@@ -17,7 +17,7 @@ public class ExcelListener extends AnalysisEventListener {
 
     @Override
     public void invoke(Object object, AnalysisContext context) {
-        datas.add((EasyModel)object);
+        datas.add((EasyModel) object);
     }
 
     @Override

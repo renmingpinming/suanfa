@@ -18,7 +18,7 @@ import java.util.Map;
  */
 public class ObjToMap2 {
     public static List<Map<String, Object>> objectToMap(Object obj) throws Exception {
-        if(obj == null){
+        if (obj == null) {
             return null;
         }
 
@@ -29,13 +29,13 @@ public class ObjToMap2 {
             field.setAccessible(true);
 //            map.put(field.getName(), field.get(obj));
             String s = field.getName();
-            Object value =field.get(obj);
+            Object value = field.get(obj);
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("key",s);
-            map.put("value",value);
-            if(value!= null){
+            map.put("key", s);
+            map.put("value", value);
+            if (value != null) {
                 System.out.println(value.getClass());
-                if(field.getType().isAssignableFrom(List.class)){
+                if (field.getType().isAssignableFrom(List.class)) {
                     System.out.println("为list类型");
 //                    for (Object v:(ArrayList)value) {
 //                        System.out.println("v:"+v.getClass());

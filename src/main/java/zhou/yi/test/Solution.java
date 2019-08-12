@@ -12,7 +12,7 @@ public class Solution {
         return sum;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         System.out.println(Sum_Solution(3));
     }
 }

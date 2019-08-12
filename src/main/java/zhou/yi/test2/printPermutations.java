@@ -5,13 +5,13 @@ package zhou.yi.test2;
  * @Date: 2019/3/5 11:28
  */
 public class printPermutations {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // 调用方式：
-        int[]a = {1,2,3,4};
+        int[] a = {1, 2, 3, 4};
         printPermutations(a, 4, 4);
     }
 
-// k 表示要处理的子数组的数据个数
+    // k 表示要处理的子数组的数据个数
     public static void printPermutations(int[] data, int n, int k) {
         if (k == 1) {
             for (int i = 0; i < n; ++i) {
@@ -22,14 +22,14 @@ public class printPermutations {
 
         for (int i = 0; i < k; ++i) {
             int tmp = data[i];
-            data[i] = data[k-1];
-            data[k-1] = tmp;
+            data[i] = data[k - 1];
+            data[k - 1] = tmp;
 
             printPermutations(data, n, k - 1);
 
             tmp = data[i];
-            data[i] = data[k-1];
-            data[k-1] = tmp;
+            data[i] = data[k - 1];
+            data[k - 1] = tmp;
         }
     }
 

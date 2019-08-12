@@ -10,7 +10,7 @@ import java.text.ParseException;
  * @Date: 2019/1/24 10:54
  */
 public class numTest {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         DecimalFormatSymbols dfs = new DecimalFormatSymbols();
         dfs.setDecimalSeparator('.');
         dfs.setGroupingSeparator(',');
@@ -36,7 +36,7 @@ public class numTest {
         try {
             Number n1 = numberFormat.parse(s1);
             Number n2 = numberFormat.parse(s2);
-            System.out.println(n1+""+n2);
+            System.out.println(n1 + "" + n2);
         } catch (Exception e) {
             e.printStackTrace();
         }

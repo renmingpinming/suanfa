@@ -7,15 +7,15 @@ package zhou.yi.leetCode.easy2;
 public class _38 {
     public String countAndSay(int n) {
         String str = "1";
-        while (--n > 0){
+        while (--n > 0) {
             int times = 1;
             char[] chars = str.toCharArray();
             int len = chars.length;
             StringBuilder sb = new StringBuilder();
-            for(int i = 1; i < len;i++){
-                if(chars[i - 1] == chars[i]){
+            for (int i = 1; i < len; i++) {
+                if (chars[i - 1] == chars[i]) {
                     times++;
-                }else {
+                } else {
                     sb.append(times).append(chars[i - 1]);
                     times = 1;
                 }

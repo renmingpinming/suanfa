@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class One {
     static List<Integer> list = new ArrayList<>();
+
     static class BB implements Runnable {
         @Override
         public void run() {
@@ -17,6 +18,7 @@ public class One {
             }
         }
     }
+
     public static void main(String[] args) throws InterruptedException {
         BB b = new BB();
         Thread t1 = new Thread(b);

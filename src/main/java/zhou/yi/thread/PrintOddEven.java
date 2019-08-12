@@ -17,7 +17,7 @@ public class PrintOddEven {
                         while ((count & 1) != 1) {
                             lock.wait();
                         }
-                        System.out.println(Thread.currentThread().getName() + " " +count);
+                        System.out.println(Thread.currentThread().getName() + " " + count);
                         count++;
                         lock.notify();
                     } catch (InterruptedException e) {
@@ -37,7 +37,7 @@ public class PrintOddEven {
                         while ((count & 1) != 0) {
                             lock.wait();
                         }
-                        System.out.println(Thread.currentThread().getName() + " " +count);
+                        System.out.println(Thread.currentThread().getName() + " " + count);
                         count++;
                         lock.notify();
                     } catch (InterruptedException e) {

@@ -6,9 +6,9 @@ import zhou.yi.leetCode.model.ListNode;
  * @Author: XiaoLang
  * @Date: 2019/5/9 18:34
  * 反转一个单链表。
- *
+ * <p>
  * 示例:
- *
+ * <p>
  * 输入: 1->2->3->4->5->NULL
  * 输出: 5->4->3->2->1->NULL
  */
@@ -17,7 +17,7 @@ public class _206 {
         ListNode pre = null;
         ListNode now = head;
         ListNode temp = null;
-        while (now!=null){
+        while (now != null) {
             temp = now.next;
             now.next = pre;
             pre = now;
@@ -28,10 +28,10 @@ public class _206 {
 
     public static void main(String[] args) {
         _206 test = new _206();
-        int[] nums = new int[]{1,2,3,4,5};
+        int[] nums = new int[]{1, 2, 3, 4, 5};
         ListNode head = ListNode.createListNode(nums);
         head = test.reverseList(head);
-        while (head!= null){
+        while (head != null) {
             System.out.println(head.val);
             head = head.next;
         }

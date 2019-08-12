@@ -55,11 +55,11 @@ public class WeakHashLock<T> {
     }
 
     public static void main(String[] args) {
-        ThreadPoolExecutor pool = new ThreadPoolExecutor(10,10,60L,
+        ThreadPoolExecutor pool = new ThreadPoolExecutor(10, 10, 60L,
                 TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(5));
         WeakHashLock<Character> lock = new WeakHashLock<>();
         String hello = "abcde";
-        for(int i = 0; i < 10;i++){
+        for (int i = 0; i < 10; i++) {
             int finalI = new Random().nextInt(5);
             pool.execute(new Runnable() {
                 @Override
@@ -67,7 +67,7 @@ public class WeakHashLock<T> {
                     try {
                         lock.get(hello.charAt(finalI)).lock();
                         Thread.sleep(1000);
-                        System.out.println(Thread.currentThread().getName() + "---"+hello.charAt(finalI));
+                        System.out.println(Thread.currentThread().getName() + "---" + hello.charAt(finalI));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     } finally {

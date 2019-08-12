@@ -21,7 +21,7 @@ public class FastJsonTest {
                 "  \"gmt_create\": \"2017/10/12 22:00:53\",\n" +
                 "  \"gmt_modify\": \"2017/10/12 22:00:53\"\n" +
                 "}";
-        Model model = JSON.parseObject(str,Model.class);
+        Model model = JSON.parseObject(str, Model.class);
 //        System.out.println(model);
 
         Model test = new Model();
@@ -38,7 +38,7 @@ public class FastJsonTest {
         String listToString = JSON.toJSONString(list);
         System.out.println(listToString);
 
-        List<Model> stringToList = JSON.parseArray(listToString,Model.class);
+        List<Model> stringToList = JSON.parseArray(listToString, Model.class);
         System.out.println(stringToList);
     }
 }

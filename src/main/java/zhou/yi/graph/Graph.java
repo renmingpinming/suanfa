@@ -10,7 +10,7 @@ public class Graph { // 无向图
     public Graph(int v) {
         this.v = v;
         adj = new LinkedList[v];
-        for (int i=0; i<v; ++i) {
+        for (int i = 0; i < v; ++i) {
             adj[i] = new LinkedList<Integer>();
         }
     }
@@ -19,11 +19,12 @@ public class Graph { // 无向图
         adj[s].add(t);
         adj[t].add(s);
     }
-//bfs
+
+    //bfs
     public void bfs(int s, int t) {
         if (s == t) return;
         boolean[] visited = new boolean[v];
-        visited[s]=true;
+        visited[s] = true;
         Queue<Integer> queue = new LinkedList<Integer>();
         queue.add(s);
         int[] prev = new int[v];

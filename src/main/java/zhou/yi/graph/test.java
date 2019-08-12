@@ -1,7 +1,7 @@
 package zhou.yi.graph;
 
 public class test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Graph graph = new Graph(8);
         graph.addEdge(0, 1);
         graph.addEdge(0, 3);
@@ -14,9 +14,9 @@ public class test {
         graph.addEdge(5, 7);
         graph.addEdge(6, 7);
 
-        graph.bfs(0,7);
+        graph.bfs(0, 7);
         System.out.println();
-        graph.dfs(0,7);
+        graph.dfs(0, 7);
     }
 
 }

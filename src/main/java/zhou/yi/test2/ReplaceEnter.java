@@ -14,10 +14,10 @@ public class ReplaceEnter {
         String s = "\n1235 44,\n154  89";
 //        System.out.println(s.replace("\n",""));
 //        System.out.println(s.replace(" ",""));
-        String[] x = s.replace("\n","").replace(" ","").split(",");
+        String[] x = s.replace("\n", "").replace(" ", "").split(",");
         System.out.println(x);
         Long shopId = 4L;
-        if(shopId.equals(4L)){
+        if (shopId.equals(4L)) {
             System.out.println("11111111111");
         }
         Long xxx = 497695873725636460L;

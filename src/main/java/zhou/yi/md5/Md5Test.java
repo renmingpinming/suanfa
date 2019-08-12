@@ -11,7 +11,7 @@ import java.util.Date;
 public class Md5Test {
     public static void main(String[] args) {
         String str = "lahfl";
-        str+=new Date();
+        str += new Date();
         System.out.println(str);
         String x = DigestUtils.md5Hex(str);
         System.out.println(x);

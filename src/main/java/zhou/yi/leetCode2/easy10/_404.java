@@ -8,33 +8,33 @@ import java.util.List;
  * @Author: XiaoLang
  * @Date: 2019/6/15 11:12
  * 计算给定二叉树的所有左叶子之和。
- *
+ * <p>
  * 示例：
- *
- *     3
- *    / \
- *   9  20
- *     /  \
- *    15   7
- *
+ * <p>
+ * 3
+ * / \
+ * 9  20
+ * /  \
+ * 15   7
+ * <p>
  * 在这个二叉树中，有两个左叶子，分别是 9 和 15，所以返回 24
  */
 public class _404 {
     public int sumOfLeftLeaves(TreeNode root) {
-        if(root == null || root.left == null){
+        if (root == null || root.left == null) {
             return 0;
         }
-        if(root.left.left == null){
-            return root.left.val+sumOfLeftLeaves(root.left)+sumOfLeftLeaves(root.right);
-        }else {
-            return sumOfLeftLeaves(root.left)+sumOfLeftLeaves(root.right);
+        if (root.left.left == null) {
+            return root.left.val + sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
+        } else {
+            return sumOfLeftLeaves(root.left) + sumOfLeftLeaves(root.right);
         }
     }
 
     int res = 0;//存储结果
 
     public int sumOfLeftLeaves2(TreeNode root) {
-        if(root==null)//root为空直接返回0
+        if (root == null)//root为空直接返回0
             return res;
         getSum(root);//递归函数,求得结果
         return res;
@@ -54,7 +54,7 @@ public class _404 {
 
     public static void main(String[] args) {
         _404 test = new _404();
-        int[] arrays = new int[]{0,2,4,1,0,3,-1,5,1,0,6,0,8};
+        int[] arrays = new int[]{0, 2, 4, 1, 0, 3, -1, 5, 1, 0, 6, 0, 8};
         List<TreeNode> treeNodes = TreeNode.createBinaryTree(arrays);
         System.out.println(test.sumOfLeftLeaves(treeNodes.get(0)));
     }

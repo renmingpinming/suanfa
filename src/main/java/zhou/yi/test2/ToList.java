@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class ToList {
     public static void main(String[] args) {
-        Long[] longOne = new Long[] {};
+        Long[] longOne = new Long[]{};
         List<Long> r = Arrays.asList(longOne);
         System.out.println(r);
     }

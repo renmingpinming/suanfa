@@ -19,11 +19,11 @@ public class _13 {
         map.put('M', 1000);
         int length = s.length();
         int sum = map.get(s.charAt(length - 1));
-        for (int i = length - 2;i >= 0;i--){
-            if(map.get(s.charAt(i)) < map.get(s.charAt(i + 1))){
-                sum-=map.get(s.charAt(i));
-            }else {
-                sum+=map.get(s.charAt(i));
+        for (int i = length - 2; i >= 0; i--) {
+            if (map.get(s.charAt(i)) < map.get(s.charAt(i + 1))) {
+                sum -= map.get(s.charAt(i));
+            } else {
+                sum += map.get(s.charAt(i));
             }
         }
         return sum;

@@ -25,7 +25,7 @@ public class EasyExcelTest {
 //            List<Object> datas = listener.getDatas();
 //            System.out.println(datas);
 
-            excelReader.read(new Sheet(1,1,EasyModel.class));
+            excelReader.read(new Sheet(1, 1, EasyModel.class));
             List<EasyModel> datas = listener.getDatas();
             System.out.println(datas);
         } catch (Exception e) {

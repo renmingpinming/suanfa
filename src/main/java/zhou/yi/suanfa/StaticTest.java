@@ -5,15 +5,13 @@ package zhou.yi.suanfa;
  * @Date: 2019/3/17 14:15
  */
 public class StaticTest {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         staticFunction();
     }
 
     static StaticTest st = new StaticTest();
 
-    static
-    {
+    static {
         System.out.println("1");
     }
 
@@ -21,16 +19,15 @@ public class StaticTest {
         System.out.println("2");
     }
 
-    StaticTest()
-    {
+    StaticTest() {
         System.out.println("3");
-        System.out.println("a="+a+",b="+b);
+        System.out.println("a=" + a + ",b=" + b);
     }
 
-    public static void staticFunction(){
+    public static void staticFunction() {
         System.out.println("4");
     }
 
-    int a=110;
-    static int b =112;
+    int a = 110;
+    static int b = 112;
 }

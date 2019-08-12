@@ -5,12 +5,13 @@ package zhou.yi.suanfa;
  * @Date: 2019/2/21 17:36
  */
 public class removeKDigits {
-/**
- * 删除整数的k个数字，获得删除后的最小值
- * @param num  原整数
- * @param k  删除数量
- */
-    public static String removeKDigits(String num, int k){
+    /**
+     * 删除整数的k个数字，获得删除后的最小值
+     *
+     * @param num 原整数
+     * @param k   删除数量
+     */
+    public static String removeKDigits(String num, int k) {
         //新整数的最终长度 = 原整数长度 - k
 
         int newLength = num.length() - k;
@@ -22,7 +23,7 @@ public class removeKDigits {
             //遍历当前数字
             char c = num.charAt(i);
             //当栈顶数字大于遍历到的当前数字，栈顶数字出栈（相当于删除数字）
-            while (top > 0 && stack[top- 1] > c && k > 0) {
+            while (top > 0 && stack[top - 1] > c && k > 0) {
                 top -= 1;
                 k -= 1;
             }
@@ -34,7 +35,7 @@ public class removeKDigits {
         while (offset < newLength && stack[offset] == '0') {
             offset++;
         }
-        return offset == newLength? "0" : new String(stack, offset, newLength - offset);
+        return offset == newLength ? "0" : new String(stack, offset, newLength - offset);
     }
 
     public static void main(String[] args) {

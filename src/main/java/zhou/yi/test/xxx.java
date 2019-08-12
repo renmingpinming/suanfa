@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class xxx {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 //        String num = "12.000";
 //        BigDecimal bd =new BigDecimal(num);
 //        System.out.println(bd.longValue());
@@ -18,7 +18,7 @@ public class xxx {
 //        int test1 = 8;
 //        System.out.println(test1>>1);
         xxx x = new xxx();
-         int[]a = {1,2,3,4};
+        int[] a = {1, 2, 3, 4};
 
     }
 
