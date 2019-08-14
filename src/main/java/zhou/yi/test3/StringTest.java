@@ -14,8 +14,10 @@ public class StringTest {
 
         String s1 = "1565753726";
         s1 = s1+"000";
-        System.out.println(s1.length());
         Date date = new Date(Long.parseLong(s1));
         System.out.println();
+
+        String x = Boolean.TRUE?"yes":"no";
+        System.out.println(x);
     }
 }
