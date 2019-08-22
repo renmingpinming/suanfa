@@ -10,46 +10,47 @@ import java.util.List;
 public class DateUtilSelf extends DateUtil {
     private static final ThreadLocal<SimpleDateFormat> batchMonthFormatThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override
-                protected SimpleDateFormat initialValue() {
+                @Override protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMM");
+                }
+            };
+
+    private static final ThreadLocal<SimpleDateFormat> batchDayFormatThreadLocalOther =
+            new ThreadLocal<SimpleDateFormat>() {
+                @Override protected SimpleDateFormat initialValue() {
+                    return new SimpleDateFormat("yyyy-MM-dd");
                 }
             };
 
     private static final ThreadLocal<SimpleDateFormat> batchDayFormatThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override
-                protected SimpleDateFormat initialValue() {
+                @Override protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMMdd");
                 }
             };
 
     private static final ThreadLocal<SimpleDateFormat> batchMinuteFormatThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override
-                protected SimpleDateFormat initialValue() {
+                @Override protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMMddHHmm");
                 }
             };
 
     private static final ThreadLocal<SimpleDateFormat> batchSecondThreadLocal =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override
-                protected SimpleDateFormat initialValue() {
+                @Override protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyyMMddHHmmss");
                 }
             };
     private static final ThreadLocal<SimpleDateFormat> batchSecondThreadLocalStyleTwo =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override
-                protected SimpleDateFormat initialValue() {
+                @Override protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
                 }
             };
     private static final ThreadLocal<SimpleDateFormat> batchSecondThreadLocalStyleThree =
             new ThreadLocal<SimpleDateFormat>() {
-                @Override
-                protected SimpleDateFormat initialValue() {
+                @Override protected SimpleDateFormat initialValue() {
                     return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 }
             };
@@ -71,13 +72,16 @@ public class DateUtilSelf extends DateUtil {
     public static String toBatchSecondStringDateStyleTwo(Date time) {
         return batchSecondThreadLocalStyleTwo.get().format(time);
     }
-
     public static String toBatchSecondStringDateStyleThree(Date time) {
         return batchSecondThreadLocalStyleThree.get().format(time);
     }
 
     public static Long toBatchSecondStringDate(Date time) {
         return Long.parseLong(batchSecondThreadLocal.get().format(time));
+    }
+
+    public static String toBatchDayStringDateOther(Date time) {
+        return batchDayFormatThreadLocalOther.get().format(time);
     }
     // DATE TO BATCH
 
@@ -113,21 +117,29 @@ public class DateUtilSelf extends DateUtil {
         return batchMinuteFormatThreadLocal.get().parse(batchMinute.toString());
     }
 
-    public static Date toDateByBatchSecond(String batchSecond) throws ParseException {
+    public static Date toDateByBatchSecond(String  batchSecond) throws ParseException {
         return batchSecondThreadLocalStyleThree.get().parse(batchSecond);
+    }
+
+    public static Date toDateByBatchDayOther(String batchDay) throws ParseException {
+        return batchDayFormatThreadLocalOther.get().parse(batchDay);
     }
 
     public static Date getFirstDayInMonth(Date date) {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
         c.set(Calendar.DAY_OF_MONTH, 1);
+        c.set(Calendar.HOUR_OF_DAY, 0);
+        c.set(Calendar.MINUTE, 0);
+        c.set(Calendar.SECOND, 0);
+        c.set(Calendar.MILLISECOND,0);
         return c.getTime();
     }
 
     public static Date getLastDayInMonth(Date date) {
         Calendar c = Calendar.getInstance();
         c.setTime(date);
-        c.set(Calendar.DAY_OF_MONTH, c.getActualMaximum(Calendar.DAY_OF_MONTH));
+        c.set(Calendar.DAY_OF_MONTH,1);
         return c.getTime();
     }
 
@@ -152,9 +164,9 @@ public class DateUtilSelf extends DateUtil {
     private static final Long oneDayInMills = 1000 * 60 * 60 * 24l;
 
     /**
+     *
      * <p>Title: 自然月区间日期</p>
      * <p>Description: 获取区间所有日期，前后包含</p>
-     *
      * @param startBatchDay
      * @param endBatchDay
      * @return
@@ -188,7 +200,6 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 获取前一天
-     *
      * @param batchDay
      * @return
      */
@@ -198,7 +209,6 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 获取后一天
-     *
      * @param batchDay
      * @return
      */
@@ -217,6 +227,67 @@ public class DateUtilSelf extends DateUtil {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         cal.add(Calendar.DATE, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 0);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        return cal.getTime();
+    }
+
+    public static Date getTomorrow8() {
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, 1);
+        cal.set(Calendar.HOUR_OF_DAY, 8);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        return cal.getTime();
+    }
+    public static Date getToday22() {
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 22);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        return cal.getTime();
+    }
+
+    public static Date getToday8() {
+        Date date = new Date();
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.set(Calendar.HOUR_OF_DAY, 8);
+        cal.set(Calendar.MINUTE, 0);
+        cal.set(Calendar.SECOND, 0);
+        cal.set(Calendar.MILLISECOND,0);
+        return cal.getTime();
+    }
+
+    /**
+     * 获取后一月
+     * @param batchDay
+     * @return
+     */
+    public static Date getMonthAfter(Integer batchDay) throws ParseException {
+        return getMonthAfter(toDateByBatchMonth(batchDay));
+    }
+
+
+    public static Date getMonthPre(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.MONTH, -1);
+        return cal.getTime();
+    }
+
+    public static Date getMonthAfter(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.MONTH, 1);
         return cal.getTime();
     }
 
@@ -257,7 +328,7 @@ public class DateUtilSelf extends DateUtil {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
         if (batchMinute != null) {
-            int hour = batchMinute / 100;
+            int hour   = batchMinute / 100;
             int minute = batchMinute % 100;
 
             cal.set(Calendar.HOUR, hour);
@@ -268,7 +339,6 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 时间加
-     *
      * @param date
      * @param minutes
      * @return
@@ -290,7 +360,6 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 时间相差毫秒数
-     *
      * @param pre
      * @param after
      * @return
@@ -321,7 +390,6 @@ public class DateUtilSelf extends DateUtil {
 
     /**
      * 两个时间相差距离多少天多少小时多少分多少秒
-     *
      * @return String 返回值为：xx天xx小时xx分xx秒
      */
     public static String getDistanceStr(Date one, Date two) {
@@ -364,7 +432,34 @@ public class DateUtilSelf extends DateUtil {
         return calendar.getTime();
     }
 
+    public static Date getTimeOfSecond(Date date) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        return calendar.getTime();
+    }
+
+    /**
+     * 根据类型获取当前时间后面的时间
+     * @param date
+     * @param type (type=5 - 天；type=10 - 小时；type=12 - 分钟；type= 13 - 秒)
+     * @param diff
+     * @return
+     */
+    public static Date getTimeAfter(Date date, int type, int diff){
+        Calendar cad = Calendar.getInstance();
+        cad.setTime(date);
+        cad.add(type, diff);
+        return cad.getTime();
+    }
+
     public static void main(String[] args) {
-        System.out.println(getStartTimeOfDay(new Date()));
+        Date date = getToday22();
+        Date date2 = getTomorrow8();
+        Date date3 = getStartTimeOfDay(new Date());
+        Date date4 = getEndTimeOfDay(new Date());
+        System.out.println(date);
+        System.out.println(date2);
     }
 }
