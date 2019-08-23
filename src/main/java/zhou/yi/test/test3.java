@@ -25,5 +25,6 @@ public class test3 {
         if (xxx.compareTo(BigDecimal.ZERO) == 0) {
             int[] aa = {1, 2, 3, 4};
         }
+        System.out.println(xxx.compareTo(new BigDecimal(-1)));
     }
 }
