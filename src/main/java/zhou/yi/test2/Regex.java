@@ -17,5 +17,13 @@ public class Regex {
         Pattern pattern2 = Pattern.compile("^(13[0-9]|14[579]|15[0-3,5-9]|16[6]|17[0135678]|18[0-9]|19[89])\\d{8}$");
         Matcher matcher2 = pattern2.matcher("13826875930");
         System.out.println(matcher2.matches());
+
+        String str = "https://detail.tmall.com/item.htm?spm=a1z10.3-b.w4011-14634202018.83.6bf165" +
+                "74Una1QS&id=557195758698&rn=e24627e2616911f728c1baf99c2a8c4d&abbucket=20&id=3879527036315";
+        Pattern patternId = Pattern.compile("(?<=&id=)\\d*");
+        Matcher matcherId = patternId.matcher(str);
+        while (matcherId.find()){
+            System.out.println(matcherId.group(0));
+        }
     }
 }
