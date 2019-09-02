@@ -19,5 +19,8 @@ public class StringTest {
 
         String x = Boolean.TRUE?"yes":"no";
         System.out.println(x);
+        String pname= "png;base64";
+        pname = pname.replace(";base64","");
+        System.out.println(pname);
     }
 }

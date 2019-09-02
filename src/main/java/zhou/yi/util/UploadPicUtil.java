@@ -31,6 +31,7 @@ public class UploadPicUtil {
         String trueFileName = null;//文件新名称
         if(matcher.matches()){
             type = contentType.substring(6,contentType.length());
+            type = type.replace(";base64","");
             // 自定义的文件名称
             trueFileName=String.valueOf(System.currentTimeMillis())+new Random().nextInt(1000)+"."+type;
             // 设置存放图片文件的路径
@@ -50,6 +51,7 @@ public class UploadPicUtil {
         PicPo rst = new PicPo();
         rst.setPicName(trueFileName);
         rst.setPicUrl(picUrl.toString());
+        rst.setUploadPicUrl(picUrl.toString());
         return rst;
     }
 }
