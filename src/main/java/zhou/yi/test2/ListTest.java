@@ -21,5 +21,7 @@ public class ListTest {
 //        list1.removeAll(list2);
         list1.retainAll(list2);
         System.out.println(list1);
+
+        list1.forEach(l-> System.out.println(l));
     }
 }

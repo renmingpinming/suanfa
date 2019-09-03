@@ -10,4 +10,5 @@ import lombok.Data;
 public class PicPo {
     private String picName;
     private String picUrl;
+    private String uploadPicUrl;
 }
