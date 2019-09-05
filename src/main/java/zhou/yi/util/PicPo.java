@@ -11,4 +11,10 @@ public class PicPo {
     private String picName;
     private String picUrl;
     private String uploadPicUrl;
+
+    public static void main(String[] args) {
+        PicPo picPo = new PicPo();
+        picPo.setPicName("xx");
+        System.out.println(picPo.toString());
+    }
 }
