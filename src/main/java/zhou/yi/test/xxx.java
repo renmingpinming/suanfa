@@ -12,8 +12,8 @@ public class xxx {
 //        BigDecimal b = new BigDecimal(0L);
 //        BigDecimal c = (a.subtract(b).divide(a,4, BigDecimal.ROUND_HALF_UP));
 //        System.out.println(c);
-//        BigDecimal x = b.divide(a);
-//        System.out.println(x);
+//        BigDecimal Test = b.divide(a);
+//        System.out.println(Test);
 //        List<String> xxx = null;
 //        int test1 = 8;
 //        System.out.println(test1>>1);

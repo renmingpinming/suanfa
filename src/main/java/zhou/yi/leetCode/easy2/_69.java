@@ -4,9 +4,9 @@ package zhou.yi.leetCode.easy2;
  * @Author: XiaoLang
  * @Date: 2019/4/18 15:58
  * 牛顿迭代法求平方根
- * 实现 int sqrt(int x) 函数。
+ * 实现 int sqrt(int Test) 函数。
  * <p>
- * 计算并返回 x 的平方根，其中 x 是非负整数。
+ * 计算并返回 Test 的平方根，其中 Test 是非负整数。
  * <p>
  * 由于返回类型是整数，结果只保留整数的部分，小数部分将被舍去。
  * <p>

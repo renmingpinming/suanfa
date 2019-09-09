@@ -6,7 +6,7 @@ import java.util.Arrays;
  * @Author: XiaoLang
  * @Date: 2019/4/27 8:59
  * #### Sort, Binary Search
- * - Arrays.sort(x): Time O(nLogN), Space O(1)
+ * - Arrays.sort(Test): Time O(nLogN), Space O(1)
  * - 排序后, 重复数会排在一起, 然后 binary search
  */
 public class _217_1 {

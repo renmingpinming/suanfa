@@ -6,7 +6,9 @@ package zhou.yi.test3;
  */
 public class LongTest {
     public static void main(String[] args) {
-        Long l1 = new Long(1);
+        Long l1 = new Long(3);
         System.out.println(l1>=1L);
+
+        System.out.println(l1 <=3);
     }
 }

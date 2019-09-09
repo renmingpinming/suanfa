@@ -64,7 +64,7 @@ public class _100 {
 //        int val;
 //        TreeNode left;
 //        TreeNode right;
-//        TreeNode(int x) { val = x; }
+//        TreeNode(int Test) { val = Test; }
 //
 //        public int getVal() {
 //            return val;
