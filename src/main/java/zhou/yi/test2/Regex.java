@@ -25,5 +25,10 @@ public class Regex {
         while (matcherId.find()){
             System.out.println(matcherId.group(0));
         }
+
+        String str3 = "https://detaojbkil.tmall.com/item.";
+        Pattern pattern3 = Pattern.compile(".*(NTM|cnm|ojbk|cao|NMZL|XB|xb|shabi|shab|mdzz|MLGB|MMP|fuck|MD|NC|JB|sb|SB|TMD|tmd|IOPE).*");
+        Matcher matcher3 = pattern3.matcher(str3);
+        System.out.println(matcher3.matches());
     }
 }
