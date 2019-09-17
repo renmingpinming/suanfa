@@ -30,5 +30,12 @@ public class Regex {
         Pattern pattern3 = Pattern.compile(".*(NTM|cnm|ojbk|cao|NMZL|XB|xb|shabi|shab|mdzz|MLGB|MMP|fuck|MD|NC|JB|sb|SB|TMD|tmd|IOPE).*");
         Matcher matcher3 = pattern3.matcher(str3);
         System.out.println(matcher3.matches());
+
+        String str4 = "@#我是客服登记内容#@";
+        Pattern pattern4 = Pattern.compile("(?<=@#).*?(?=#@)");
+        Matcher matcher4 = pattern4.matcher(str4);
+        while (matcher4.find()){
+            System.out.println(matcher4.group(0));
+        }
     }
 }

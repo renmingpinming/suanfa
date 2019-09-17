@@ -12,11 +12,11 @@ public class xxx {
 //        BigDecimal b = new BigDecimal(0L);
 //        BigDecimal c = (a.subtract(b).divide(a,4, BigDecimal.ROUND_HALF_UP));
 //        System.out.println(c);
-//        BigDecimal Test = b.divide(a);
-//        System.out.println(Test);
+//        BigDecimal x = b.divide(a);
+//        System.out.println(x);
 //        List<String> xxx = null;
-//        int test1 = 8;
-//        System.out.println(test1>>1);
+//        int x1 = 8;
+//        System.out.println(x1>>1);
         xxx x = new xxx();
         int[] a = {1, 2, 3, 4};
 

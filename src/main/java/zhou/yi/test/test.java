@@ -33,9 +33,9 @@ public class test {
 //        set1.remove("d");
 //        System.out.println(set1);
 
-//        BigDecimal Test = null;
+//        BigDecimal x = null;
 //        BigDecimal y = new BigDecimal(10);
-//        y.add(Test);
+//        y.add(x);
         test t = new test();
 //        String tidSet = "1,2,3,6,5,8,1,2,6,11";
         String tidSet = "1";
