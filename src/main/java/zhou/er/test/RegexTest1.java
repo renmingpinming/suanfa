@@ -31,5 +31,6 @@ public class RegexTest1 {
         Pattern pattern3 = Pattern.compile("^(?!(HC_HS|HC_PNT)).*");
         List<FxTrendPo> list3 = list.stream().filter(fxTrendPo -> pattern3.matcher(fxTrendPo.getName()).matches()).collect(Collectors.toList());
         System.out.println(list2);
+        list.replaceAll(fxTrendPo -> {fxTrendPo.setName(fxTrendPo.getName().toUpperCase()); return fxTrendPo;});
     }
 }
