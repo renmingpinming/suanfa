@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * @Author:XiaoLang
@@ -31,5 +32,7 @@ public class BigDecimalTest {
         Optional<BigDecimal> max = budgetDos.stream().map(a -> a.getThreshold()).max(Comparator.naturalOrder());
         BigDecimal max2 = budgetDos.stream().map(a -> a.getThreshold()).max(Comparator.naturalOrder()).orElse(BigDecimal.ZERO);
         Optional<PoBudgetDo> max1 = budgetDos.stream().max((u1, u2) -> u1.getThreshold().compareTo(u2.getThreshold()));
+        List<PoBudgetDo> budgetDos2 = new ArrayList<>();
+        List<PoBudgetDo> budgetDos1 = budgetDos2.stream().filter(s->s.getThreshold().compareTo(new BigDecimal(5)) == 0).collect(Collectors.toList());
     }
 }
