@@ -10,5 +10,9 @@ public class StringTest {
         StringBuilder sb = new StringBuilder(x.toString());
         sb.insert(4,"-");
         System.out.println(sb.toString());
+
+        String test = "56256252766776767676";
+        System.out.println(Long.MAX_VALUE);
+//        Long l = Long.parseLong(test);
     }
 }
