@@ -31,5 +31,11 @@ public class ListTest {
             String x = newList.toString().replace(",",";").replace(" ","");
             System.out.println(x.substring(1,x.length() - 1));
         }
+
+        List<String> tidList2 = new ArrayList<>();
+        List<String> tidList3 = null;
+        for (String s: tidList2) {
+            int x = 1;
+        }
     }
 }
