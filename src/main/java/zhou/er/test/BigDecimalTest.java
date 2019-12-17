@@ -34,5 +34,9 @@ public class BigDecimalTest {
         Optional<PoBudgetDo> max1 = budgetDos.stream().max((u1, u2) -> u1.getThreshold().compareTo(u2.getThreshold()));
         List<PoBudgetDo> budgetDos2 = new ArrayList<>();
         List<PoBudgetDo> budgetDos1 = budgetDos2.stream().filter(s->s.getThreshold().compareTo(new BigDecimal(5)) == 0).collect(Collectors.toList());
+
+//        PoBudgetDo test = null;
+        PoBudgetDo test = new PoBudgetDo();;
+        test.setBatchMonth(1);
     }
 }
