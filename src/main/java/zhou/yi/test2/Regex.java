@@ -37,5 +37,17 @@ public class Regex {
         while (matcher4.find()){
             System.out.println(matcher4.group(0));
         }
+
+        String str5 = "    \"errorMsg\": \"Validation failed for argument at index 2 in method: public void com.onechance" +
+                ".xingtu.server.controller.ProjectController.saveOrUpdateProject(javax.servlet.http.HttpServletRequest,javax.servle" +
+                "t.http.HttpServletResponse,com.onechance.xingtu.server.biz.model.ProjectForm), with 1 error(s): [Field error in object " +
+                "'projectForm' on field 'name': rejected value [null]; codes [NotBlank.projectForm.name,NotBlank.name,NotBlank.java.lang.String" +
+                ",NotBlank]; arguments [org.springframework.context.support.DefaultMessageSourceResolvable: codes [projectForm.name,name]; argum" +
+                "ents []; default message [name]]; default message [name不能为空]] \",";
+        Pattern pattern5 = Pattern.compile("(?<=default message \\[).*?(?=])");
+        Matcher matcher5 = pattern5.matcher(str5);
+        while (matcher5.find()){
+            System.out.println(matcher5.group(0));
+        }
     }
 }
