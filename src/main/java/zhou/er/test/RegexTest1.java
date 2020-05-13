@@ -4,6 +4,7 @@ import zhou.er.extend.FxTrendPo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
@@ -35,5 +36,15 @@ public class RegexTest1 {
 
         Pattern patternNum = Pattern.compile("^\\d+$");
         Boolean x = patternNum.matcher("123444444444").matches();
+    }
+
+    public String remarkRegex(String remark){
+        Pattern pattern = Pattern.compile("(?<=@#).*?(?=#@)");
+        Matcher matcher = pattern.matcher(remark);
+        String rst = null;
+        if (matcher.find()){
+            rst = matcher.group();
+        }
+        return rst;
     }
 }
