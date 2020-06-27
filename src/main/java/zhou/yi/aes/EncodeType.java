@@ -1,10 +1,8 @@
 package zhou.yi.aes;
 
 /**
- * 在线助手|在线工具|在线生成|在线制作
- * https://www.it399.com/
- * 在线助手博客
- * https://www.it399.com/blog/index
+ * @Author:ZhouYi
+ * @Date:2020-05-20 09:03
  */
 public class EncodeType {
     //    算法/模式/填充                 16字节加密后数据长度       不满16字节加密后长度

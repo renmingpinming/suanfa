@@ -11,12 +11,12 @@ import java.security.InvalidAlgorithmParameterException;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.Random;
+import java.util.UUID;
 
 /**
- * 在线助手|在线工具|在线生成|在线制作
- * https://www.it399.com/
- * 在线助手博客
- * https://www.it399.com/blog/index
+ * @Author:ZhouYi
+ * @Date:2020-05-20 09:03
  */
 public class AESUtil {
     public static final String CHARSET = "UTF-8";
@@ -54,30 +54,22 @@ public class AESUtil {
     }
 
     /**
-     * 指定一个初始化向量 (Initialization vector，IV)，IV 必须是16位
+     * 生成16位不重复的随机数，含数字+大小写
+     * @return
      */
-    public static final byte[] getIV() throws Exception {
-        return "1234567812345678".getBytes(CHARSET);
-    }
-
-    public static void main(String[] args) throws Exception {
-        String content = "在线助手";
-        // 生成密钥需要的密码值
-//        String key = "www.it399.com";
-        byte[] encrypt;
-        /**
-         * 1.4 AES/OFB
-         * AES/OFB/NoPadding
-         * AES/OFB/PKCS5Padding
-         * AES/OFB/ISO10126Padding
-         */
-
-        String key = "s3Z0s4AMRwU89DN6VOMudwdtuLEQqJyZZ1xzja83T8A=";
-        byte[] keyBytes = Base64.decodeBase64(key);
-
-        encrypt = encryptOrdecrypt(true, content.getBytes(CHARSET), keyBytes, getIV(), AESType.AES_128, EncodeType.AES_OFB_NoPadding);
-        byte[] decode = encryptOrdecrypt(false, encrypt, keyBytes, getIV(), AESType.AES_128, EncodeType.AES_OFB_NoPadding);
-        String decodeStr = new String(decode, CHARSET);
+    public static String getIv() throws Exception{
+        //随机生成一位整数
+        int random = (int) (Math.random()*9+1);
+        String valueOf = String.valueOf(random);
+        //生成uuid的hashCode值
+        int hashCode = UUID.randomUUID().toString().hashCode();
+        //可能为负数
+        if(hashCode<0){
+            hashCode = -hashCode;
+        }
+        String value = valueOf + String.format("%015d", hashCode);
+        byte[] ivByte = Base64.encodeBase64(value.getBytes("UTF-8"));
+        return new String(ivByte, "UTF-8");
     }
 
     /**
@@ -107,4 +99,33 @@ public class AESUtil {
         decode = encryptOrdecrypt(false, decode, keyByteTwo, ivByte, AESType.AES_128, EncodeType.AES_OFB_NoPadding);
         return new String(decode, "UTF-8");
     }
+
+    /**
+     * 加密密码
+     * @param filePath
+     * @param projectKey
+     * @param password
+     * @param iv
+     * @return
+     */
+    public static String encodePassword(String filePath,String projectKey,String password,String iv) throws IOException, NoSuchPaddingException, InvalidKeyException, NoSuchAlgorithmException, IllegalBlockSizeException, BadPaddingException, InvalidAlgorithmParameterException {
+        File keyFile = new File(filePath);
+        FileInputStream fis = new FileInputStream(keyFile);
+        DataInputStream dis = new DataInputStream(fis);
+        //要读取的位数
+        byte[] keyByteOne = new byte[(int) keyFile.length()];
+        dis.read(keyByteOne);
+        fis.close();
+        dis.close();
+        byte[] keyByteTwo = Base64.decodeBase64(projectKey);
+
+        byte[] passwordByte = password.getBytes(CHARSET);
+        byte[] ivByte = Base64.decodeBase64(iv);
+
+        //加密
+        byte[] decode = encryptOrdecrypt(true, passwordByte, keyByteTwo, ivByte, AESType.AES_128, EncodeType.AES_OFB_NoPadding);
+        decode = encryptOrdecrypt(true, decode, keyByteOne, ivByte, AESType.AES_128, EncodeType.AES_OFB_NoPadding);
+        return Base64.encodeBase64String(decode);
+    }
+
 }
